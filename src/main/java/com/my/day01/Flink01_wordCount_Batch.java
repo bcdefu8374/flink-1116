@@ -20,7 +20,7 @@ public class Flink01_wordCount_Batch {
         ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
 
         //2.从文本读取数据
-        DataSource<String> line = env.readTextFile("input");
+        DataSource<String> line = env.readTextFile("input/1.txt");
 
         //3.按照空格进行打散
         FlatMapOperator<String, Tuple2<String, Integer>> wordToOneDSet = line.flatMap(new MyFlatMapper());

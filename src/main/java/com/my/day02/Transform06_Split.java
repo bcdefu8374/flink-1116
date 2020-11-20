@@ -50,6 +50,8 @@ public class Transform06_Split {
             }
         });
 
+        splitStr.print();
+
         //6.有split一定要有select
         DataStream<SensorReading> high = splitStr.select("high");
         DataStream<SensorReading> low = splitStr.select("low");
