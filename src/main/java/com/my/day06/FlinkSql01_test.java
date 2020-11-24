@@ -19,6 +19,7 @@ public class FlinkSql01_test {
         //1.获取执行环境并设置并行度
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(1);
+
         //2.读取文本数据创建流
         DataStreamSource<String> textFile = env.readTextFile("input/sensor.txt");
 
